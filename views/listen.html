@@ -1,0 +1,30 @@
+<html>
+<head>
+  <script
+    src="https://cdnjs.cloudflare.com/ajax/libs/howler/2.0.5/howler.js"
+  >
+  </script>
+</head>
+<body>
+  <h1>Hello world</h1>
+  <button type="button" id="play">Play </button>
+  <button type="button" id="stop">Stop </button>
+  <script>
+    sound = new Howl({
+      autoplay: false,
+      loop: true,
+      volume: 0.9,
+      src: '/stream.mp3',
+      html5: true,
+      format: ['mp3']
+    });
+
+    // sound.play();
+    var playControl = document.getElementById('play');
+    var stopControl = document.getElementById('stop');
+
+    playControl.addEventListener('click', () => sound.play());
+    stopControl.addEventListener('click', () => sound.stop());
+  </script>
+</body>
+</html>
